@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bevan:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="./_css/header&footer.css">
+    <link rel="stylesheet" href="./_css/index_nav.css">
+    <link rel="stylesheet" href="./_css/search_box.css">
+    <link rel="stylesheet" href="./_css/index_main.css">
+    <link rel="stylesheet" href="./_css/mgs.css">
+    <link rel="stylesheet" href="./_css/cart.css">
+    
+
+    <!-- js -->
+    <script src="./_js/jquery-3.6.4.min.js"></script>
+    <script src="./_js/jquery-ui.min.css"></script>
+
+    <title>Buzzer Beater Home Page</title>
+
+    <script>
+        $(document).ready(function () {
+            // 品牌
+            $('.shoes_ul').hide();
+            $('#shoes_title').mouseover(function () {
+                $('.shoes_ul').show();
+            });
+            $('.shoes_ul').mouseover(function () {
+                $('.shoes_ul').show();
+            });
+            $('#shoes_title').mouseout(function () {
+                $('.shoes_ul').hide();
+            });
+            $('.shoes_ul').mouseout(function () {
+                $('.shoes_ul').hide();
+            });
+
+            // 球星
+            $('.player_ul').hide();
+            $('#player_title').mouseover(function () {
+                $('.player_ul').show();
+            });
+            $('.player_ul').mouseover(function () {
+                $('.player_ul').show();
+            });
+            $('#player_title').mouseout(function () {
+                $('.player_ul').hide();
+            });
+            $('.player_ul').mouseout(function () {
+                $('.player_ul').hide();
+            });
+
+            // 顏色
+            $('.color_div').hide();
+            $('#color_title').mouseover(function () {
+                $('.color_div').show();
+            });
+            $('.color_div').mouseover(function () {
+                $('.color_div').show();
+            });
+            $('#color_title').mouseout(function () {
+                $('.color_div').hide();
+            });
+            $('.color_div').mouseout(function () {
+                $('.color_div').hide();
+            });
+
+            // 點擊愛心次數
+            $('.product_heart_img').click(function(){
+                var $pa = $(this).parent();
+                var $count = $pa.find('.product_heart_num');
+                $count.text(parseInt($count.text()) + 1 );
+
+            });
+
+            // nav點擊篩選
+                // 品牌
+                $('#ua').click(function(){
+                    $('.ua').show();
+                    $('.nike, .puma, .adidas, .ascis').hide();
+                });
+                $('#nike').click(function(){
+                    $('.nike').show();
+                    $('.ua, .puma, .adidas, .ascis').hide();
+                });
+                $('#puma').click(function(){
+                    $('.puma').show();
+                    $('.nike, .ua, .adidas, .ascis').hide();
+                });
+                $('#adidas').click(function(){
+                    $('.adidas').show();
+                    $('.nike, .puma, .ua, .ascis').hide();
+                });
+                $('#ascis').click(function(){
+                    $('.ascis').show();
+                    $('.nike, .puma, .adidas, .ua').hide();
+                });
+                // 球員
+                $('#sc').click(function(){
+                    $('.sc').show();
+                    $('.lj, .mj, .kd, .jh, .ga, .dl, .dm, .ty, .mb, .oth').hide();
+                });
+                $('#lj').click(function(){
+                    $('.lj').show();
+                    $('.sc, .mj, .kd, .jh, .ga, .dl, .dm, .ty, .mb, .oth').hide();
+                });
+                $('#mj').click(function(){
+                    $('.mj').show();
+                    $('.lj, .sc, .kd, .jh, .ga, .dl, .dm, .ty, .mb, .oth').hide();
+                });
+                $('#kd').click(function(){
+                    $('.kd').show();
+                    $('.lj, .mj, .sc, .jh, .ga, .dl, .dm, .ty, .mb, .oth').hide();
+                });
+                $('#jh').click(function(){
+                    $('.jh').show();
+                    $('.lj, .mj, .kd, .sc, .ga, .dl, .dm, .ty, .mb, .oth').hide();
+                });
+                $('#ga').click(function(){
+                    $('.ga').show();
+                    $('.lj, .mj, .kd, .jh, .sc, .dl, .dm, .ty, .mb, .oth').hide();
+                });
+                $('#dl').click(function(){
+                    $('.dl').show();
+                    $('.lj, .mj, .kd, .jh, .ga, .sc, .dm, .ty, .mb, .oth').hide();
+                });
+                $('#dm').click(function(){
+                    $('.dm').show();
+                    $('.lj, .mj, .kd, .jh, .ga, .dl, .sc, .ty, .mb, .oth').hide();
+                });
+                $('#ty').click(function(){
+                    $('.ty').show();
+                    $('.lj, .mj, .kd, .jh, .ga, .dl, .dm, .sc, .mb, .oth').hide();
+                });
+                $('#mb').click(function(){
+                    $('.mb').show();
+                    $('.lj, .mj, .kd, .jh, .ga, .dl, .dm, .ty, .sc, .oth').hide();
+                });
+
+                // 顏色
+                $('#white').click(function(){
+                    $('.white').show();
+                    $('.black, .red, .orange, .yellow, .green, .blue, .purple').hide();
+                });
+                $('#black').click(function(){
+                    $('.black').show();
+                    $('.white, .red, .orange, .yellow, .green, .blue, .purple').hide();
+                });
+                $('#red').click(function(){
+                    $('.red').show();
+                    $('.black, .white, .orange, .yellow, .green, .blue, .purple').hide();
+                });
+                $('#orange').click(function(){
+                    $('.orange').show();
+                    $('.black, .red, .white, .yellow, .green, .blue, .purple').hide();
+                });
+                $('#yellow').click(function(){
+                    $('.yellow').show();
+                    $('.black, .red, .orange, .white, .green, .blue, .purple').hide();
+                });
+                $('#green').click(function(){
+                    $('.green').show();
+                    $('.black, .red, .orange, .yellow, .white, .blue, .purple').hide();
+                });
+                $('#blue').click(function(){
+                    $('.blue').show();
+                    $('.black, .red, .orange, .yellow, .green, .white, .purple').hide();
+                });
+                $('#purple').click(function(){
+                    $('.purple').show();
+                    $('.black, .red, .orange, .yellow, .green, .blue, .white').hide();
+                });
+            // 搜尋篩選
+            $('#myinput').on("keyup", function(){
+                // 抓搜尋關鍵字
+                var value = $(this).val().toLowerCase();
+
+                // 抓下方符合的block
+                $('.product_block').filter( function(){
+                    $(this).toggle($(this).find('.product_info_title, .product_info_color').text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            // refresh
+            $('.refresh_buttom').click(function(){
+                location.reload();
+            });
+
+            //mgs
+            var btn = document.getElementById('mgs_btn');
+            var list = document.querySelector('.mgs_list');
+            var text = document.getElementById('mgs_text');
+            var name = document.getElementById('mgs_name');
+
+            btn.onclick = function(){
+                if (text.value == ''){
+                    alert('ENTER YOUR MESSAGE!')
+                }else if(name.value == ''){
+                    alert('ENTER YOUR NAME!')
+                }else{
+                    var li = document.createElement('li');
+                    var time = new Date();
+
+                    var mytime = time.getFullYear() + ' / ' + (time.getMonth() + 1) + ' / ' + time.getDate() + ' / ' + time.getHours() + 'hr' + ' : ' + time.getMinutes() + 'min';
+
+                    li.innerHTML = '<div class="mgs_text_box">' + '<div class="mgs_name_text_box">' +'<div class="mgs_name_box">' + name.value + '</div>'+ '<div class="mgs_text_left">' + text.value + '</div>' + '</div>' + '<div class="mgs_time_right">' + mytime + '</div>' + '</div>'
+                    // + "<button>刪除</button>"
+                    text.value = '';
+                    name.value = '';
+                    list.insertBefore(li, list.children[0]);
+                    $('.mgs_list').append(li);
+                    
+                }
+            };//mgs
+
+            //cart
+            var buy_array = [];
+            $('#close').hide();
+            $('#shopping_cart').click(function(){
+                $('#cart_win').fadeIn(800);
+                $('#close').fadeIn(800);
+            });
+
+            $('#close').click(function(){
+                $('#cart_win').fadeOut(300);
+                $('#close').fadeOut(300);
+            });
+
+            $('.product_cart').click(function(){
+                // $('#item_num').
+                var $pa = $(this).parent();
+                // console.log($pa);
+
+                var $price = $pa.find('.product_info_price');
+                console.log($price.text());
+
+                var $img = $pa.find('.product_img');
+                var $text = $pa.find('.product_info_title');
+
+                var item_obj = {
+                    src: $img.attr('src'),
+                    text: $text.text(),
+                    price: $price.text()
+                };
+                buy_array.push(item_obj);
+
+                console.log(buy_array);
+
+                var $cart_item = $('<div class="cart_item"> \
+                                        <img class="cart_img" src="./_image/UA/CURRY 10 BANGBANG/CURRY 10 BANGBANG_1.jpg" /> \
+                                        <div class="cart_info">\
+                                            <div class="cart_text">UA CURRY 10 BANG BANG</div>\
+                                            <div class="cart_price">$5280</div>\
+                                        </div>\
+                                        <img class="cancel" src="./_image/logo/cancel.png">\
+                                    </div>');
+
+                $('#cart_win').append($cart_item);
+
+                $cart_item.find('.cart_price').text(item_obj.price);
+                $cart_item.find('.cart_img').attr('src' ,item_obj.src);
+                $cart_item.find('.cart_text').text(item_obj.text);
+
+                $('#item_num').text($('.cart_item').length);
+
+                $('.cancel').click(function(){
+                    var cancel = $(this).parent();
+                    cancel.remove();
+                    $('#item_num').text($('.cart_item').length);
+                })
+                
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <header>
+            <div class="header_inside">
+                <img src="_image/logo/mylogo.png" alt="">
+                <p>Buzzer Beater</p>
+
+                <nav>
+                    <!-- shoes -->
+                    <div class="navitem" id="shoes">
+                        <div id="shoes_title">BRAND</div>
+                        <div class="shoes_ul">
+                            <div id="ua" class="select_list"><img  class="list_icon" class="shoes_logo" src="./_image/logo/UA.png" alt="">
+                                <p>Under Armour</p>
+                            </div>
+                            <div id="nike" class="select_list"><img  class="list_icon" class="shoes_logo" src="./_image/logo/Nike.png" alt="">
+                                <p>Nike</p>
+                            </div>
+                            <div id="adidas" class="select_list"><img  class="list_icon" class="shoes_logo" src="./_image/logo/Adidas.png"
+                                    alt="">
+                                <p>Adidas</p>
+                            </div>
+                            <!-- <div id="puma" class="select_list"><img  class="list_icon" class="shoes_logo" src="./_image/logo/PUMA.png" alt="">
+                                <p>Puma</p>
+                            </div> -->
+                            <!-- <div id="ascis" class="select_list"><img  class="list_icon" class="shoes_logo" src="./_image/logo/ascis.png" alt="">
+                                <p>Ascis</p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- player -->
+                    <div class="navitem" id="player">
+                        <div id="player_title">PLAYER</div>
+                        <div class="player_ul">
+                            <div class="player_left" class="player_grid">
+
+                                <div id="sc" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/ua_Stephen Curry.png" alt="">
+                                    <p>S.Curry</p>
+                                </div>
+                                <div id="lj" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/nike_LeBron James.png" alt="">
+                                    <p>L.James</p>
+                                </div>
+                                <div id="mj" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/nike_Michael Jordan.png" alt="">
+                                    <p>M.Jordan</p>
+                                </div>
+                                <div id="kd" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/nike_Kevin Durant.png" alt="">
+                                    <p>K.Durant</p>
+                                </div>
+                                
+                                <!-- <div id="mb" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/puma_Melo Ball.png" alt="">
+                                    <p>M.Ball</p>
+                                </div> -->
+                            </div>
+            
+                            <div class="player_right" class="player_grid">
+                                <div id="jh" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/adidas_James Harden.png" alt="">
+                                    <p>J.Harden</p>
+                                </div>
+                                <div id="ga" class="select_list">
+                                    <img class="player_logo" class="toomanyword"
+                                        src="./_image/logo/player/adidas_Giannis Antetokounmpo.png" alt="">
+                                    <p>Giannis</p>
+                                </div>
+                                <div id="dl" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/adidas_Damian Lillard.png" alt="">
+                                    <p>D.Lillard</p>
+                                </div>
+                                <!-- <div id="ty" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/adidas_Trae Young.png" alt="">
+                                    <p>T.Young</p>
+                                </div> -->
+                                <!-- <div id="dm" class="select_list">
+                                    <img class="player_logo" src="./_image/logo/player/adidas_Donovan Mitchell.png" alt="">
+                                    <p>D.Mitchell</p>
+                                </div> -->
+            
+                            </div><!-- <div class="player_right" class="player_grid"> -->
+                        </div><!-- <div class="player_ul"></div> -->
+                    </div>
+            
+                    <!-- color -->
+                    <div class="navitem" id="color">
+                        <div id="color_title">COLOR</div>
+                        <div class="color_div">
+                            <div id="white" class="color_block"></div>
+                            <div id="black" class="color_block"></div>
+                            <div id="red" class="color_block"></div>
+                            <div id="orange" class="color_block"></div>
+                            <div id="yellow" class="color_block"></div>
+                            <div id="green" class="color_block"></div>
+                            <div id="blue" class="color_block"></div>
+                            <div id="purple" class="color_block"></div>
+                        </div>
+                    </div>
+                </nav>
+
+                <div id="shopping_cart">
+                    <img src="./_image/logo/cart_b_2.png" alt="">
+                </div>
+            </div>
+
+            
+
+            
+    </header>
+
+    <div class="search_box">
+        <div class="search_bar">
+            <form action="">
+                <input type="text" id="myinput" placeholder="Search Buzzer Beater">
+            </form>
+            <div class="search_buttom"><img src="./_image/logo/search.png" alt=""></div>
+        </div>
+        <div class="refresh_buttom"><img src="./_image/logo/refresh.png" alt="" title="Refresh"></div>
+    </div>
+    
+    <main>
+        <div class="main_div" id="mymain">
+            <!-- UA --><!-- UA --><!-- UA --><!-- UA --><!-- UA --><!-- UA --><!-- UA -->
+            <div class="ua">
+                <!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 -->
+                <div class="yellow">
+                <div class="sc">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./ua/product_ua2.html" target="_blank"><img class="product_img" src="./_image/UA/CURRY 10 BANGBANG/CURRY 10 BANGBANG_1.png" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" >UA CURRY 10 BANG BANG</div>
+                        </div>
+                        <div class="product_info_price">NT$5280</div>
+                        <div class="product_info_color" class="search_yellow" >#YELLOW</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">306</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                
+                <!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 -->
+                <div class="blue">
+                <div class="sc">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./ua/product_ua3.html" target="_blank"><img class="product_img" src="./_image/UA/Curry 10 CURRYFORNIA/Curry 10 CURRYFORNIA_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">UA CURRY 10 CURRYFORNIA</div>
+                        </div>
+                        <div class="product_info_price">NT$5280</div>
+                        <div class="product_info_color" class="search_blue">#BLUE</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">198</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 -->
+                <!-- <div class="red">
+                    <div class="sc">
+                        <div class="product_block">
+                            <div class="product_img_box">
+                                <a href="./ua/product_ua4.html" target="_blank"><img class="product_img" src="./_image/UA/CURRY 10 GIRL DAD/CURRY 10 GIRL DAD_1.jpg" alt=""></a>
+                            </div>
+                            <div class="product_info">
+                                <div class="product_info_title" class="product_info_title">UA CURRY 10 GIRL DAD</div>
+                            </div>
+                            <div class="product_info_price">NT$5280</div>
+                            <div class="product_info_color" class="search_red">#RED</div>
+
+                            <div class="product_heart">
+                                <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">1162</div>
+                            </div>
+                            <div class="product_cart">
+                                <img src="./_image/logo/cart_b.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 -->
+                <!-- <div class="white">
+                    <div class="sc">
+                        <div class="product_block">
+                            <div class="product_img_box">
+                                <a href="./ua/product_ua5.html" target="_blank"><img class="product_img" src="./_image/UA/CURRY 10 SPLASH PARTY/CURRY 10 SPLASH PARTY_1.jpg" alt=""></a>
+                            </div>
+                            <div class="product_info">
+                                <div class="product_info_title" class="product_info_title">UA CURRY 10 SPLASH PARTY</div>
+                            </div>
+                            <div class="product_info_price">NT$5280</div>
+                            <div class="product_info_color" class="search_white">#WHITE</div>
+
+                            <div class="product_heart">
+                                <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">789</div>
+                            </div>
+                            <div class="product_cart">
+                                <img src="./_image/logo/cart_b.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 -->
+                <div class="white">
+                    <div class="sc">
+                        <div class="product_block">
+                            <div class="product_img_box">
+                                <a href="./ua/product_ua1.html" target="_blank"><img class="product_img" src="./_image/UA/CURRY 2 LOW FLOTRONM/CURRY 2 LOW FLOTRONM_1.jpg" alt=""></a>
+                            </div>
+                            <div class="product_info">
+                                <div class="product_info_title" class="product_info_title">UA CURRY 2 LOW FLOTRONM</div>
+                            </div>
+                            <div class="product_info_price">NT$5080</div>
+                            <div class="product_info_color" class="search_white" class="search_orange">#WHITE #ORANGE</div>
+
+                            <div class="product_heart">
+                                <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">602</div>
+                            </div>
+                            <div class="product_cart">
+                                <img src="./_image/logo/cart_b.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NIKE --><!-- NIKE --><!-- NIKE --><!-- NIKE --><!-- NIKE --><!-- NIKE --><!-- NIKE -->
+            <div class="nike">
+                <!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 -->
+                <div class="black">
+                <div class="lj">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./nike/product_nike3.html" target="_blank"><img class="product_img" src="./_image/Nike/LeBron XX/LeBron XX_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">NIKE LeBron XX</div>
+                        </div>
+                        <div class="product_info_price">NT$4500</div>
+                        <div class="product_info_color" class="search_black">#BLACK</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">209</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 -->
+                <div class="green">
+                <div class="kd">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./nike/product_nike1.html" target="_blank"><img class="product_img" src="./_image/Nike/KD15/KD15_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">NIKE KD15</div>
+                        </div>
+                        <div class="product_info_price">NT$4950</div>
+                        <div class="product_info_color" class="search_white" class="search_green">#WHITE #GREEN</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">137</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 -->
+                <div class="blue">
+                <div class="mj">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./nike/product_nike4.html" target="_blank"><img class="product_img" src="./_image/Nike/Jordan Stay Loyal 2_bw/Jordan Stay Loyal 2_bw2_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">NIKE Jordan Stay Loyal 2</div>
+                        </div>
+                        <div class="product_info_price">NT$3600</div>
+                        <div class="product_info_color" class="search_white" class="search_blue">#WHITE #BLUE</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">240</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 -->
+                <!-- <div class="red">
+                <div class="mj">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./nike/product_nike5.html" target="_blank"><img class="product_img" src="./_image/Nike/Jordan Stay Loyal 2_rw/Jordan Stay Loyal 2_rw_1.png" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">NIKE Jordan Stay Loyal 2</div>
+                        </div>
+                        <div class="product_info_price">NT$3600</div>
+                        <div class="product_info_color" class="search_white" class="search_black" class="search_red">#WHITE #BLACK #RED</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">167</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 -->
+                <div class="green">
+                <div class="ga">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./nike/product_nike2.html" target="_blank"><img class="product_img" src="./_image/Nike/Freak 4/Freak 4_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">NIKE Freak 4</div>
+                        </div>
+                        <div class="product_info_price">NT$3000</div>
+                        <div class="product_info_color" class="search_white" class="search_black" class="search_green">#WHITE #GREEN</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">538</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <!-- PUMA --><!-- PUMA --><!-- PUMA --><!-- PUMA --><!-- PUMA --><!-- PUMA --><!-- PUMA -->
+            <!-- <div class="puma"> -->
+                <!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 -->
+                <!-- <div class="white">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./puma/product_puma3.html" target="_blank"><img class="product_img" src="./_image/Puma/CR.2.0/CR.2.0_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">PUMA Court Rider 2.0</div>
+                        </div>
+                        <div class="product_info_price">NT$2190</div>
+                        <div class="product_info_color" class="search_white" class="search_black">#WHITE #BLACK</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">308</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 -->
+                <!-- <div class="green">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./puma/product_puma4.html" target="_blank"><img class="product_img" src="./_image/Puma/CR.CJ/Chaos Jewel_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">PUMA Court Rider Chaos Jewel</div>
+                        </div>
+                        <div class="product_info_price">NT$3880</div>
+                        <div class="product_info_color" class="search_white" class="search_green">#WHITE #GREEN</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">545</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 -->
+                <!-- <div class="orange">
+                <div class="mb">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./puma/product_puma5.html" target="_blank"><img class="product_img" src="./_image/Puma/MB.02/MB.02_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">PUMA MB.02 GORANGÉ</div>
+                        </div>
+                        <div class="product_info_price">NT$4480</div>
+                        <div class="product_info_color" class="search_white" class="search_orange">#WHITE #ORANGE</div>
+                        
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">374</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 -->
+                <!-- <div class="white">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./puma/product_puma2.html" target="_blank"><img class="product_img" src="./_image/Puma/PM.Pro/PM.Pro_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">PUMA Playmaker Pro</div>
+                        </div>
+                        <div class="product_info_price">NT$2090</div>
+                        <div class="product_info_color" class="search_white">#WHITE</div>
+                        
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">267</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 -->
+                <!-- <div class="purple">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./puma/product_puma1.html" target="_blank"><img class="product_img" src="./_image/Puma/TRC/TRC_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">PUMA TRC Blaze Court</div>
+                        </div>
+                        <div class="product_info_price">NT$2490</div>
+                        <div class="product_info_color" class="search_white" class="search_purple" class="search_yellow">#WHITE #PURPLE #YELLOW</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">603</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div> -->
+            
+            <!-- ADIDAS --><!-- ADIDAS --><!-- ADIDAS --><!-- ADIDAS --><!-- ADIDAS --><!-- ADIDAS -->
+            <div class="adidas">
+                <!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 -->
+                <!-- <div class="blue">
+                <div class="dm">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./adidas/product_adidas4.html" target="_blank"><img class="product_img" src="./_image/Adidas/D.O.N/D.O.N._1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Adidas D.O.N. Issue #4</div>
+                        </div>
+                        <div class="product_info_price">NT$3890</div>
+                        <div class="product_info_color" class="search_white" class="search_blue">#WHITE #BLUE</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">216</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 -->
+                <div class="red">
+                <div class="dl">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./adidas/product_adidas5.html" target="_blank"><img class="product_img" src="./_image/Adidas/DAME/DAME_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Adidas Dame Extply 2.0</div>
+                        </div>
+                        <div class="product_info_price">NT$3090</div>
+                        <div class="product_info_color" class="search_white" class="search_black" class="search_red">#WHITE #BLACK #RED</div>
+                        
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">149</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 -->
+                <div class="yellow">
+                <div class="jh">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./adidas/product_adidas3.html" target="_blank"><img class="product_img" src="./_image/Adidas/HARDEN7/HARDEN7_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Adidas Harden Vol. 7</div>
+                        </div>
+                        <div class="product_info_price">NT$5290</div>
+                        <div class="product_info_color" class="search_yellow" class="search_black">#YELLOW #BLACK</div>
+                        
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">208</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 -->
+                <!-- <div class="blue">
+                <div class="ty">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./adidas/product_adidas1.html" target="_blank"><img class="product_img" src="./_image/Adidas/TY2_b/TY2_b_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Adidas Trae Young 2</div>
+                        </div>
+                        <div class="product_info_price">NT$4090</div>
+                        <div class="product_info_color" class="search_white" class="search_blue">#WHITE #BLUE</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">133</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 -->
+                <!-- <div class="yellow">
+                <div class="ty">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./adidas/product_adidas2.html" target="_blank"><img class="product_img" src="./_image/Adidas/TY2_y/TY2_y_1.jpg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Adidas Trae Young 2</div>
+                        </div>
+                        <div class="product_info_price">NT$4090</div>
+                        <div class="product_info_color" class="search_yellow">#YELLOW</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">449</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+            </div>
+            
+            <!-- ASICS --><!-- ASICS --><!-- ASICS --><!-- ASICS --><!-- ASICS --><!-- ASICS -->
+            <!-- <div class="ascis"> -->
+                <!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 --><!-- 1 -->
+                <!-- <div class="green">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./ascis/product_ascis5.html" target="_blank"><img class="product_img" src="./_image/Asics/ARS/ARS_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Asics UNPRE ARS</div>
+                        </div>
+                        <div class="product_info_price">NT$4980</div>
+                        <div class="product_info_color" class="search_white" class="search_blue" class="search_green">#WHITE #GREEN</div>
+                        
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">215</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 --><!-- 2 -->
+                <!-- <div class="purple">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./ascis/product_ascis3.html" target="_blank"><img class="product_img" src="./_image/Asics/G27_p/G27_p_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Asics GELBURST 27</div>
+                        </div>
+                        <div class="product_info_price">NT$4780</div>
+                        <div class="product_info_color" class="search_white" class="search_purple">#WHITE #PURPLE</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">198</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 --><!-- 3 -->
+                <!-- <div class="white">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./ascis/product_ascis4.html" target="_blank"><img class="product_img" src="./_image/Asics/G27_w/G27_r_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Asics GELBURST 27</div>
+                        </div>
+                        <div class="product_info_price">NT$4780</div>
+                        <div class="product_info_color" class="search_white">#WHITE</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">276</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 --><!-- 4 -->
+                <!-- <div class="blue">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./ascis/product_ascis1.html" target="_blank"><img class="product_img" src="./_image/Asics/GV15_b/GV15_b_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Asics GELHOOP V15</div>
+                        </div>
+                        <div class="product_info_price">NT$3780</div>
+                        <div class="product_info_color" class="search_white" class="search_blue">#WHITE #BLUE</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">434</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+                
+                <!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 --><!-- 5 -->
+                <!-- <div class="red">
+                <div class="oth">
+                    <div class="product_block">
+                        <div class="product_img_box">
+                            <a href="./ascis/product_ascis2.html" target="_blank"><img class="product_img" src="./_image/Asics/GV15_r/GV15_r_1.jpeg" alt=""></a>
+                        </div>
+                        <div class="product_info">
+                            <div class="product_info_title" class="product_info_title">Asics GELHOOP V15</div>
+                        </div>
+                        <div class="product_info_price">NT$3780</div>
+                        <div class="product_info_color" class="search_white" class="search_red">#WHITE #RED</div>
+
+                        <div class="product_heart">
+                            <img class="product_heart_img" src="./_image/logo/heart.png" alt=""><div class="product_heart_num">414</div>
+                        </div>
+                        <div class="product_cart">
+                            <img src="./_image/logo/cart_b.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+            <!-- </div> -->
+        </div>
+    </main>
+    <div id="mgs_box">
+
+        <div id="text_btn_div">
+            <input type="name" id="mgs_name" placeholder="Name" >
+            <input type="text" id="mgs_text" placeholder="Your Comment..." >
+                
+            <div id="mgs_btn_div">
+                    <input type="submit" id="mgs_btn">
+                    <img id="mgs_btn_img" src="./_image/logo/submit_y.png" alt="">
+            </div>
+        </div>
+
+        <div class="mgs_list_box">
+            <ul class="mgs_list">
+                <li id="start_mgs">Leave Your Comment</li>
+            </ul> 
+        </div>
+        
+            
+        
+    </div>
+
+    <footer>
+        <p>Wellcom to Buzzer Beater! &nbsp;&nbsp; Let's find your destiny!</p>
+    </footer>
+
+    <div id="cart_win">
+        <div id="cart_box">
+                <div id="cart_title"><p>Shopping Cart</p></div>
+                <div id="cart_total"><p>Total:<span id="item_num">0</span></p></div>
+            
+            <div id="close">
+                <img src="./_image/logo/close.png" alt="">
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
