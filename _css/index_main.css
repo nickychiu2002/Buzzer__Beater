@@ -1,0 +1,121 @@
+main{
+    display: flex;
+    width: 100vw;
+    height: fit-content;
+    justify-content: center;
+    
+}
+.main_div{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #FEFDF9;
+    align-items: center;
+}
+.product_block{
+    width: 60vw;
+    height: 200px;
+    border-bottom: 1px solid #F3C052;
+    margin: 20px;
+
+    align-items: center;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+    "a b b b b"
+    "a c d d d "
+    "a e e f f";
+    /* cursor: pointer; */
+}
+.product_block:hover{
+    border-radius: 20px;
+    border: 2px solid #FCEDCC;
+    background-color: #FCEDCC;
+}
+.product_block > div:first-child{
+    grid-area: a;
+}
+.product_block > div:nth-child(2){
+    grid-area: b;
+}
+.product_block > div:nth-child(3){
+    grid-area: c;
+}
+.product_block > div:nth-child(4){
+    grid-area: d;
+}
+.product_block > div:nth-child(5){
+    grid-area: e;
+}
+.product_block > div:nth-child(6){
+    grid-area: f;
+}
+.product_img{
+    margin: 20px 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+}
+.product_img_box  img{
+    border-radius: 10px;
+    margin: 20px 50px 20px 20px;
+    /* height: 200px; */
+}
+.product_img_box  img:hover{
+    box-shadow: 2px 2px 5px #c69835;
+}
+.product_info{
+    margin: 20px 20px 20px 0;
+}
+.product_info_title{
+    font-size: 28px;
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+.product_info_price{
+    font-size: 20px;
+}
+.product_info_color{
+    font-size: 20px;
+    color: #6e6e6e;
+    width:fit-content ;
+    margin-left: 20px;
+}
+.product_heart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+.product_heart > img{
+    width: 10%;
+    margin-bottom: 25px;
+    /* border-radius: 50%; */
+    cursor: pointer;
+    /* background-color: #FEFDF9; */
+}
+.product_cart{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+}
+.product_cart > img{
+    width: 7%;
+    margin-bottom: 25px;
+    /* border-radius: 50%; */
+    cursor: pointer;
+    /* background-color: #FEFDF9; */
+}
+.product_heart > img:hover, .product_cart > img:hover{
+    filter: drop-shadow(2px 2px 3px #c69835);
+}
+.product_heart_num{
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}

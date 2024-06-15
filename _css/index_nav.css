@@ -1,0 +1,240 @@
+nav {
+    width: 80vw;
+    height: 16vh;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    /* top: 16vh; */
+    background-color: #ffda8900;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navitem {
+    margin: 0px 80px;
+    font-size: 20px;
+}
+
+#shoes, #player, #color_title {
+    width: 50px;
+    height: 48px;
+    /* border-radius: 25px; */
+    background-color: transparent;
+    color: black;
+    font-weight: 900;
+    justify-content: center;
+    line-height: 50px;
+    font-family: "Arimo", sans-serif;
+}
+
+#shoes:hover, #player:hover, #color_title:hover {
+    /* background-color: #fdc651; */
+    color: #f3c052;
+    /* text-shadow: 1px 1px 1px #ba9e64; */
+    /* box-shadow:  2px 2px 5px 1px #c698359f; */
+}
+
+
+
+/* 品牌 */
+.shoes_ul {
+    position: absolute;
+    /* top: 55px; */
+
+    background-color: white;
+    color: black;
+    width: 230px;
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    box-shadow: 2px 2px 3px#ba9e64;
+    line-height: 60px;
+}
+#shoes_title{
+    cursor: pointer;
+}
+/* 球星 */
+.player_ul {
+    position: absolute;
+    /* top: 55px; */
+
+    background-color: white;
+    color: black;
+    width: 450px;
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    box-shadow: 2px 2px 3px#ba9e64;
+    line-height: 60px;
+
+    display: flex;
+    flex-direction: row;
+}
+#player_title{
+    cursor: pointer;
+}
+.player_logo {
+    margin: 20px;
+    width: 8%;
+    height: 8%;
+}
+
+.player_left {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.player_right {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    align-self: flex-start;
+}
+/* 顏色 */
+.color_div {
+    position: absolute;
+    /* top: 55px; */
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+        "a b "
+        "c d"
+        "e f"
+        "g h";
+
+    background-color: white;
+    color: black;
+    width: 150px;
+    height: 280px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 3px#ba9e64;
+    line-height: 60px;
+
+}
+
+.color_div:first-child {
+    grid-area: a;
+}
+
+.color_div:nth-child(2) {
+    grid-area: b;
+}
+
+.color_div:nth-child(3) {
+    grid-area: c;
+}
+
+.color_div:nth-child(4) {
+    grid-area: d;
+}
+
+.color_div:nth-child(5) {
+    grid-area: e;
+}
+
+.color_div:nth-child(6) {
+    grid-area: f;
+}
+
+.color_div:nth-child(7) {
+    grid-area: g;
+}
+
+.color_div:nth-child(8) {
+    grid-area: h;
+}
+#color_title{
+    cursor: pointer;
+}
+.color_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 5px 15px 5px 10px;
+}
+.color_block img {
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+}
+
+.color_block img:hover {
+    box-shadow: 2px 2px 3px #9e9e9e;
+}
+
+#white{
+    background: #ffffff;
+    border: 1px solid black;
+}
+#black{
+    background: black;
+    border: 1px solid black;
+}
+#red{
+    background: #cf141b;
+    border: 1px solid black;
+}
+#orange{
+    background: #ed6b1a;
+    border: 1px solid black;
+}
+#yellow{
+    background: #f4d823;
+    border: 1px solid black;
+}
+#blue{
+    background: #1A6AB5;
+    border: 1px solid black;
+}
+#green{
+    background: #5db530;
+    border: 1px solid black;
+}
+#purple{
+    background: #744196;
+    border: 1px solid black;
+}
+
+/* 通用 */
+.list_icon {
+    width: 100%;
+    margin: 0;
+
+}
+
+.select_list {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 5px 0 5px;
+}
+.select_list > p{
+    font-size: 18px;
+}
+
+.select_list > img{
+    width: 20%;
+    height: 20%;
+    margin: 10px;
+}
+
+.select_list:hover {
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
