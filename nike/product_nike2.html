@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bevan:ital@0;1&display=swap" rel="stylesheet">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="../_css/header&footer.css">
+    <link rel="stylesheet" href="../_css/mgs.css">
+    <link rel="stylesheet" href="../_css/cart.css">
+    <link rel="stylesheet" href="../_css/product.css">
+
+    <!-- js -->
+    <script src="../_js/jquery-3.6.4.min.js"></script>
+    <script src="../_js/jquery-ui-1.13.2.custom/_js/jquery-ui.js"></script>
+
+    <title>Nike - Freak 4</title>
+
+    <script>
+        $(document).ready(function () {
+            //img更換
+            window.onload = function(){
+                let imgs = document.getElementsByClassName('img');
+                let showing = document.getElementById('showimg');
+                imgs[0].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[1].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[2].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[3].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[4].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+            }
+
+            //加減數量
+            $('#minus').click(function(){
+                var $pa = $(this).parent();
+                var $papa = $('#var_num').parent();
+
+                var $count = $pa.find('#number_box');
+                var $num = $papa.find('#var_num');
+                if($count.text()<=1){
+                    $count.text(parseInt($count.text()) - 0 );
+                    $num.text(parseInt($num.text()) - 0 );
+                }else{
+                    $count.text(parseInt($count.text()) - 1 );
+                    $num.text(parseInt($num.text()) - 1 );
+                }
+            });
+            $('#plus').click(function(){
+                var $pa = $(this).parent();
+                var $papa = $('#var_num').parent();
+
+                var $count = $pa.find('#number_box');
+                var $num = $papa.find('#var_num');
+                $count.text(parseInt($count.text()) + 1 );
+                $num.text(parseInt($num.text()) + 1 );
+            });
+
+            //mgs
+            var btn = document.getElementById('mgs_btn');
+            var list = document.querySelector('.mgs_list');
+            var text = document.getElementById('mgs_text');
+            var name = document.getElementById('mgs_name');
+
+            btn.onclick = function(){
+                if (text.value == ''){
+                    alert('你沒有輸入內容!')
+                }else if(name.value == ''){
+                    alert('你沒有輸入你的大名!')
+                }else{
+                    var li = document.createElement('li');
+                    var time = new Date();
+
+                    var mytime = time.getFullYear() + ' / ' + (time.getMonth() + 1) + ' / ' + time.getDate() + ' / ' + time.getHours() + 'hr' + ' : ' + time.getMinutes() + 'min';
+
+                    li.innerHTML = '<div class="mgs_text_box">' + '<div class="mgs_name_text_box">' +'<div class="mgs_name_box">' + name.value + '</div>'+ '<div class="mgs_text_left">' + text.value + '</div>' + '</div>' + '<div class="mgs_time_right">' + mytime + '</div>' + '</div>'
+                    // + "<button>刪除</button>"
+                    text.value = '';
+                    name.value = '';
+                    list.insertBefore(li, list.children[0]);
+                    $('.mgs_list').append(li);
+                    
+                }
+            };//mgs
+            
+    })
+    </script>
+</head>
+<body>
+    <header>
+        <a href="/index.html">
+            <div class="header_inside">
+                <img src="../_image/logo/mylogo.png" alt="">
+                <p>Buzzer Beater</p>
+            </div>
+        </a>
+    </header>
+
+    <main>
+        <div class="product_container">
+            <div class="product_img">
+                <div class="group">
+                    <div class="subgroup">
+                        <div class="subitem"><img id="product_img" class="img" src="../_image/Nike/Freak 4/Freak 4_1.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/Freak 4/Freak 4_2.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/Freak 4/Freak 4_3.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/Freak 4/Freak 4_4.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/Freak 4/Freak 4_5.jpg" alt=""></div>
+                    </div>
+                    <div class="gallery">
+                        <img id="showimg" class="img" src="../_image/Nike/Freak 4/Freak 4_1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="buy_button">
+                    <!-- <div class="cart">加入購物車</div> -->
+                    <div class="buynow">立即購買</div>
+                </div>
+            </div>
+            <div class="product_detial_container">
+                <div class="product_detial">
+                    <div class="product_detial_title">Freak 4</div>
+                    <div class="product_detial_price">NT$3000</div>
+                    <div class="product_detial_color">顏色：白色、綠色</div>
+                    <div class="product_detial_size">
+                        <div class="size_block">22.5</div>
+                        <div class="size_block">23</div>
+                        <div class="size_block">23.5</div>
+                        <div class="size_block">24</div>
+                        <div class="size_block">24.5</div>
+                        <div class="size_block">25</div>
+                    </div>
+                    <div id="buynum_title">數量：<span id="var_num">1</span></div>
+                    <div class="product_detial_num">
+                        <div id="minus"><img src="../_image/logo/minus_w.png" alt=""></div>
+                        <div id="number_box">1</div>
+                        <div id="plus"><img src="../_image/logo/plus_w.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product_detial_article">
+            <div class="article_title">商品描述</div>
+
+            <div class="detail_box">
+                <!-- <div class="detail_title">商品細節</div> -->
+                <div class="detail_text">
+                    <p>
+                        怪物絕技， 有如神助。 現在就穿上 Freak 4，展現冠軍風範。 
+                        第四代 Giannis 簽名鞋款，以 Giannis 出神入化的球風作為設計主軸。 
+                        舒適非凡的場上疾速腳感，搭配全明星設計細節，讓你展現 Giannis 狂人氣勢，犀利登場。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">場上舒適</div>
+                <div class="detail_text">
+                    <p>
+                        輕盈透氣的布質鞋面，任你舒適奔馳與暢動。 鞋面的重點部位經強化處理，經久耐穿。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">怪物風格</div>
+                <div class="detail_text">
+                    <p>
+                        塑模反向 Swoosh 標誌，取自 Giannis Freak 系列鞋款的招牌特色。 
+                        鞋底抓地紋路是根據 Giannis 的足部壓力點資料而設計，再縮小至兒童尺寸。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                
+                <div class="detail_title">商品細節</div>
+                <div class="detail_text">
+                    <ul>
+                        <li>足底柔軟泡棉，為跑步和跳躍提供輕量緩震效能。</li>
+                        <li>橡膠鞋底在鞋跟與前足採各自獨立設計，著感輕盈靈活。</li>
+                        <li>版型較小，建議訂購大半號尺寸</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="detail_box">
+                <div class="detail_title">價格說明</div>
+                <div class="detail_text">
+                    <ul>
+                        <li>劃線價格：劃線的價格可能是商品的專櫃吊牌價或正品零售價指導價或該商品的曾經展示過的銷售價等，僅供您參考</li>
+                        <li>未劃線價格：未劃線的價格是商品在官網上的銷售標價，具體的成交價格可能因會員使用優惠券發生變化，最終以訂單結算頁價格為準</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+
+    <div id="mgs_box">
+        <div class="mgs_list_box">
+            <ul class="mgs_list">
+                <li id="start_mgs">歡迎留言</li>
+            </ul> 
+        </div>
+
+        <div id="text_btn_div">
+            <input type="name" id="mgs_name" placeholder="寫下你的名字" >
+            <input type="text" id="mgs_text" placeholder="歡迎留言..." ><br>
+            <div id="mgs_btn_div">
+                <input type="submit" id="mgs_btn">
+                <img id="mgs_btn_img" src="../_image/logo/submit_y.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Wellcom to Buzzer Beater! &nbsp;&nbsp; Let's find your destiny!</p>
+    </footer>
+
+</body>
+</html>

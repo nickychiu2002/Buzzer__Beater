@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bevan:ital@0;1&display=swap" rel="stylesheet">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="../_css/header&footer.css">
+    <link rel="stylesheet" href="../_css/mgs.css">
+    <link rel="stylesheet" href="../_css/cart.css">
+    <link rel="stylesheet" href="../_css/product.css">
+
+    <!-- js -->
+    <script src="../_js/jquery-3.6.4.min.js"></script>
+    <script src="../_js/jquery-ui-1.13.2.custom/_js/jquery-ui.js"></script>
+
+    <title>Nike - KD15 EP</title>
+
+    <script>
+        $(document).ready(function () {
+            //img更換
+            window.onload = function(){
+                let imgs = document.getElementsByClassName('img');
+                let showing = document.getElementById('showimg');
+                imgs[0].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[1].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[2].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[3].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+                imgs[4].addEventListener('click', function(){
+                    imgs[5].src = this.src;
+                });
+            }
+
+            //加減數量
+            $('#minus').click(function(){
+                var $pa = $(this).parent();
+                var $papa = $('#var_num').parent();
+
+                var $count = $pa.find('#number_box');
+                var $num = $papa.find('#var_num');
+                if($count.text()<=1){
+                    $count.text(parseInt($count.text()) - 0 );
+                    $num.text(parseInt($num.text()) - 0 );
+                }else{
+                    $count.text(parseInt($count.text()) - 1 );
+                    $num.text(parseInt($num.text()) - 1 );
+                }
+            });
+            $('#plus').click(function(){
+                var $pa = $(this).parent();
+                var $papa = $('#var_num').parent();
+
+                var $count = $pa.find('#number_box');
+                var $num = $papa.find('#var_num');
+                $count.text(parseInt($count.text()) + 1 );
+                $num.text(parseInt($num.text()) + 1 );
+            });
+
+            //mgs
+            var btn = document.getElementById('mgs_btn');
+            var list = document.querySelector('.mgs_list');
+            var text = document.getElementById('mgs_text');
+            var name = document.getElementById('mgs_name');
+
+            btn.onclick = function(){
+                if (text.value == ''){
+                    alert('你沒有輸入內容!')
+                }else if(name.value == ''){
+                    alert('你沒有輸入你的大名!')
+                }else{
+                    var li = document.createElement('li');
+                    var time = new Date();
+
+                    var mytime = time.getFullYear() + ' / ' + (time.getMonth() + 1) + ' / ' + time.getDate() + ' / ' + time.getHours() + 'hr' + ' : ' + time.getMinutes() + 'min';
+
+                    li.innerHTML = '<div class="mgs_text_box">' + '<div class="mgs_name_text_box">' +'<div class="mgs_name_box">' + name.value + '</div>'+ '<div class="mgs_text_left">' + text.value + '</div>' + '</div>' + '<div class="mgs_time_right">' + mytime + '</div>' + '</div>'
+                    // + "<button>刪除</button>"
+                    text.value = '';
+                    name.value = '';
+                    list.insertBefore(li, list.children[0]);
+                    $('.mgs_list').append(li);
+                    
+                }
+            };//mgs
+            
+    })
+    </script>
+</head>
+<body>
+    <header>
+        <a href="/index.html">
+            <div class="header_inside">
+                <img src="../_image/logo/mylogo.png" alt="">
+                <p>Buzzer Beater</p>
+            </div>
+        </a>
+    </header>
+
+    <main>
+        <div class="product_container">
+            <div class="product_img">
+                <div class="group">
+                    <div class="subgroup">
+                        <div class="subitem"><img id="product_img" class="img" src="../_image/Nike/KD15/KD15_1.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/KD15/KD15_2.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/KD15/KD15_3.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/KD15/KD15_4.jpg" alt=""></div>
+                        <div class="subitem"><img class="img" src="../_image/Nike/KD15/KD15_5.jpg" alt=""></div>
+                    </div>
+                    <div class="gallery">
+                        <img id="showimg" class="img" src="../_image/Nike/KD15/KD15_1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="buy_button">
+                    <!-- <div class="cart">加入購物車</div> -->
+                    <div class="buynow">立即購買</div>
+                </div>
+            </div>
+            <div class="product_detial_container">
+                <div class="product_detial">
+                    <div class="product_detial_title">KD15 EP</div>
+                    <div class="product_detial_price">NT$4950</div>
+                    <div class="product_detial_color">顏色：白色、綠色</div>
+                    <div class="product_detial_size">
+                        <div class="size_block">25</div>
+                        <div class="size_block">25.5</div>
+                        <div class="size_block">26</div>
+                        <div class="size_block">26.5</div>
+                        <div class="size_block">27</div>
+                        <div class="size_block">27.5</div>
+                        <div class="size_block">28</div>
+                        <div class="size_block">28.5</div>
+                        <div class="size_block">29</div>
+                        <div class="size_block">30</div>
+                        <div class="size_block">31</div>
+                    </div>
+                    <div id="buynum_title">數量：<span id="var_num">1</span></div>
+                    <div class="product_detial_num">
+                        <div id="minus"><img src="../_image/logo/minus_w.png" alt=""></div>
+                        <div id="number_box">1</div>
+                        <div id="plus"><img src="../_image/logo/plus_w.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product_detial_article">
+            <div class="article_title">商品描述</div>
+
+            <div class="detail_box">
+                <!-- <div class="detail_title">商品細節</div> -->
+                <div class="detail_text">
+                    <p>
+                        比賽中的關鍵出手和出神入化的射籃表現都是 Kevin Durant 的日常發揮。 
+                        只要球傳到他的手上，比賽就能輕鬆致勝。 KD15 以極簡版型為他提供適切到位的機能表現：
+                        充分彈力、穩固貼合與合腳舒適感受。 精簡足底和鞋面材質，有助於減少干擾，同時提升能量回傳機能和全方位舒適感，
+                        對像 KD 這種永不停歇的球員至關重要。 這款 KD15 特別版向嘻哈 50 週年致敬，
+                        同時紀念過去和現在。 此版本配有超耐久外底，可在室外球場發揮卓越效能。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">設計幕後故事</div>
+                <div class="detail_text">
+                    <p>
+                        在其問世 50 週年之際，這一造型從對音樂產業留下不可磨滅印記的嘻哈影響者和影響力量中汲取靈感。
+                        在鞋領周圍加上個性滑脫吊牌，並查看鞋舌標籤，向懷舊派對海報致敬。 
+                        尋找貼紙風格的內底，慶祝嘻哈的黃金時代和現代。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">繫上鞋帶，緊密貼合</div>
+                <div class="detail_text">
+                    <p>
+                        鞋帶沿著鞋側穿過浮動式側片。 綁緊時會順勢下拉側片，將足部穩固定位。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">柔順著感，出色彈性</div>
+                <div class="detail_text">
+                    <p>
+                        柔軟全掌式泡棉搭配可見式 Zoom Air Strobel 氣墊，打造柔順靈敏的雙層緩震系統。 
+                        Zoom Air Strobel 去除多餘的層次設計，為足底帶來優異的能量回傳效能。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">越穿越舒適</div>
+                <div class="detail_text">
+                    <p>
+                        減少墊層的鞋面設計少了非必要重量，提升合腳舒適的著感。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">站穩腳步，全力以赴</div>
+                <div class="detail_text">
+                    <p>
+                        外底樣式採用宛如地形圖般錯綜復雜的波形底紋設計，可靈活彎曲轉向，為每個動作提供優異的多向性抓地力。 
+                        橡膠上的塑模「EASY」字樣，向 KD 輕鬆流暢的球風致敬。
+                    </p>
+                    <p>&nbsp;</p>
+                </div>
+
+                <div class="detail_title">商品細節</div>
+                <div class="detail_text">
+                    <ul>
+                        <li>輕薄裝飾片，有助鞋尖抗磨損。</li>
+                        <li>鞋舌塑模「KD」標誌</li>
+                        <li>版型較小，建議訂購大半號尺寸</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="detail_box">
+                <div class="detail_title">價格說明</div>
+                <div class="detail_text">
+                    <ul>
+                        <li>劃線價格：劃線的價格可能是商品的專櫃吊牌價或正品零售價指導價或該商品的曾經展示過的銷售價等，僅供您參考</li>
+                        <li>未劃線價格：未劃線的價格是商品在官網上的銷售標價，具體的成交價格可能因會員使用優惠券發生變化，最終以訂單結算頁價格為準</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+
+    <div id="mgs_box">
+        <div class="mgs_list_box">
+            <ul class="mgs_list">
+                <li id="start_mgs">歡迎留言</li>
+            </ul> 
+        </div>
+
+        <div id="text_btn_div">
+            <input type="name" id="mgs_name" placeholder="寫下你的名字" >
+            <input type="text" id="mgs_text" placeholder="歡迎留言..." ><br>
+            <div id="mgs_btn_div">
+                <input type="submit" id="mgs_btn">
+                <img id="mgs_btn_img" src="../_image/logo/submit_y.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Wellcom to Buzzer Beater! &nbsp;&nbsp; Let's find your destiny!</p>
+    </footer>
+
+</body>
+</html>
